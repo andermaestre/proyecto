@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactoModel } from 'src/app/models/contacto.model';
@@ -15,13 +15,12 @@ export class ModificarContactoComponent implements OnInit, ControlValueAccessor{
   divError = 'none';
   divOk = 'none';
   form: FormGroup;
-  contactosServicio: ServicioContactosService = inject(ServicioContactosService);
   contacto: ContactoModel | null = null;
   id: number = -1;
 
   private valueType: 'value' | 'valueAsDate' = 'value';
 
-  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private renderer: Renderer2, private elementRef: ElementRef) {
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private renderer: Renderer2, private elementRef: ElementRef, private contactosServicio: ServicioContactosService) { 
     this.form = this.fb.group({
       id: [''],
       nombre: [''],
@@ -36,8 +35,7 @@ export class ModificarContactoComponent implements OnInit, ControlValueAccessor{
   }
   
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {  
     this.route.paramMap.subscribe(params => {
       this.id = Number.parseInt(params.get('id') || '');
     });
@@ -67,8 +65,6 @@ export class ModificarContactoComponent implements OnInit, ControlValueAccessor{
     }
     
   }
-
-  
 
   registerOnChange(fn: any): void {
     this.onChange = (event: any) => fn(event.target[this.valueType])

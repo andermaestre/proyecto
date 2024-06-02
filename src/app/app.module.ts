@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JsonPipe } from '@angular/common';
 import { ModificarContactoComponent } from './components/modificar-contacto/modificar-contacto.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaContactosComponent,
     NuevoContactoComponent,
-    ModificarContactoComponent
+    ModificarContactoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

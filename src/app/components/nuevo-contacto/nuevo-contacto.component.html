@@ -15,16 +15,16 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Nombre y apellidos</span>
                 </div>
-                <input class="form-control" type="text" [style.width]="'20%'" formControlName="nombre" id="nombre" />
-                <input class="form-control" type="text" [style.width]="'46%'" formControlName="apellido" id="apellido">
+                <input class="form-control" type="text" [style.width]="'20%'" formControlName="nombre" id="nombre" required />
+                <input class="form-control" type="text" [style.width]="'46%'" formControlName="apellido" id="apellido" required />
             </div>
         </div>
         <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <span class="input-group-text">Email</span>
-                <input formControlName="email" [style.width]="'20%'" id="email" type="text" class="form-control" placeholder="Usuario de la cuenta" aria-label="Usuario de la cuenta" aria-describedby="basic-addon2">
+                <input formControlName="email" [style.width]="'20%'" id="email" type="text" class="form-control" placeholder="Usuario de la cuenta" aria-label="Usuario de la cuenta" aria-describedby="basic-addon2" required />
                 <span class="input-group-text" [style.width]="'3em'">&#64;</span>
-                <select formControlName="emailServidor" class="form-control custom-select" id="inputGroupSelect01">
+                <select formControlName="emailServidor" class="form-control custom-select" id="inputGroupSelect01" required>
                     <option selected>Seleccionar</option>
                     <option value="@gmail.com">gmail.com</option>
                     <option value="@hotmail.com">hotmail.com</option>
@@ -41,7 +41,7 @@
         <div class="col-sm-12 col-md-6">
             <div class="input-group">
                 <span class="input-group-text">Telefono</span>
-                <input formControlName="telefono" id="telefono" type="text" class="form-control" aria-label="Cuenta de google" aria-describedby="basic-addon2">
+                <input formControlName="telefono" id="telefono" type="text" class="form-control" aria-label="Telefono" aria-describedby="basic-addon2" required />
             </div>
         </div>
         <div class="col-sm-12 col-md-6">
@@ -50,7 +50,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Fecha de nacimiento</span>
                     </div>
-                    <input class="form-control" placeholder="dd-MM-yyyy" name="dp" formControlName="fecha_nacimiento" type="date" pattern="dd-MM-yyyy">
+                    <input class="form-control" placeholder="dd/MM/yyyy" name="dp" formControlName="fecha_nacimiento" type="date" required />
                 </div>
             </div>
         </div>

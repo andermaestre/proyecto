@@ -1,7 +1,9 @@
 <div class="jumbotron text-center" [ngStyle]="{'background-color': titlecolor, 'padding': '1em', 'margin-bottom': '1em'}">
   <h1>{{title}}</h1>
 </div>
+
 <div class="container">
+  <app-menu></app-menu>
   <div class="row">
     <div class="col-md-12">
       <router-outlet></router-outlet>

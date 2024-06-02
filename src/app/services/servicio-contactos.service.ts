@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { ContactoModel } from '../models/contacto.model';
+import { ServicioContactosServiceInterface } from './servicio-contactos.service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioContactosService {
+export class ServicioContactosService extends ServicioContactosServiceInterface{
 
   protected contactos: ContactoModel[] = [];
 
-  constructor() {
+  constructor() { 
+    super();
     /*this.contactos.push({
       id: 1,
       nombre: 'Pedro',

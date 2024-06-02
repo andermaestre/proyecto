@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactoModel } from'src/app/models/contacto.model';
 import { ServicioContactosService } from 'src/app/services/servicio-contactos.service';
@@ -11,9 +11,8 @@ import { ServicioContactosService } from 'src/app/services/servicio-contactos.se
 export class ListaContactosComponent {
 
   contactos : ContactoModel[] = [];
-  contactosServicio: ServicioContactosService = inject(ServicioContactosService);
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private contactosServicio:ServicioContactosService) { 
     this.contactos = this.contactosServicio.getContactos();
   }
 
