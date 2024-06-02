@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NuevoContactoComponent {
   @HostListener('blur', []) onTouched: any = () => { };
   @HostListener('input', ['$event']) onChange: any = () => { };
+  titulo = 'Nuevo Contacto';
   divError = 'none';
   divOk = 'none';
   form: FormGroup;

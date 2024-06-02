@@ -9,7 +9,7 @@ import { ServicioContactosService } from 'src/app/services/servicio-contactos.se
   styleUrls: ['./lista-contactos.component.css']
 })
 export class ListaContactosComponent {
-
+  titulo = 'Lista de Contactos';
   contactos : ContactoModel[] = [];
 
   constructor(private router: Router, private contactosServicio:ServicioContactosService) { 

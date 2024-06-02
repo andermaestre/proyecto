@@ -12,6 +12,7 @@ import { ServicioContactosService } from 'src/app/services/servicio-contactos.se
 export class ModificarContactoComponent implements OnInit, ControlValueAccessor{
   @HostListener('blur', []) onTouched: any = () => { };
   @HostListener('input', ['$event']) onChange: any = () => { };
+  titulo = 'Modificar Contacto';
   divError = 'none';
   divOk = 'none';
   form: FormGroup;
